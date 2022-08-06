@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <body>
+		<h1>Calculator</h1>
+		<label>Number 1  </label> <input type="text" id="num1" onkeyup="calc()"> <br>
+		<label>Number 2  </label> <input type="text" id="num2" onkeyup="calc()"><br>
+		<label>Operation </label>
+	<select name="opr" id="opr" onchange="calc()">
+		<option value="Add">Add</option>
+		<option value="Subtract">Subtract</option>
+		<option value="Multiply">Multiply</option>
+		<option value="Divide">Divide</option>
+	</select>
+	<br>
+		 <label for="res" id="res">Result</label> 
+		<script>
+			function calc() {  
+				result = ( opr.value == "Add")?parseFloat(num1.value) + parseFloat(num2.value):
+								 ( opr.value == "Subtract")?parseFloat(num1.value) - parseFloat(num2.value): 
+								 ( opr.value == "Multiply")?parseFloat(num1.value) * parseFloat(num2.value): 
+								 ( opr.value == "Divide")?parseFloat(num1.value) / parseFloat(num2.value): 
+									"Oh No";
+				console.log(result);
+	document.getElementById('res').innerHTML= "Result "+ result;
+			} 
+		</script>
+  </body>
+</html>
